@@ -14,8 +14,8 @@ public class UnidadeSaudeImpl extends UnicastRemoteObject implements IUnidadeSau
     }
 
     private void carregarUBS() {
-        unidadesSaude.add(new UnidadeSaude("20546", "UBS Central"));
-        unidadesSaude.add(new UnidadeSaude("22489", "UBS Centro-Sul"));
+        unidadesSaude.add(new UnidadeSaude("20546", "UBS Central", "Centro"));
+        unidadesSaude.add(new UnidadeSaude("22489", "UBS Centro-Sul", "Adrianópolis"));
     }
 
     @Override

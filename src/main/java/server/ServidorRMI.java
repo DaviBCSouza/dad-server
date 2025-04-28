@@ -1,27 +1,26 @@
 package server;
 
-import rmi.cidade.CidadeImpl;
-import rmi.ocupacao.CboImpl;
-import rmi.ubs.UnidadeSaudeImpl;
-
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+
+import rmi.ocupacao.CboImpl;
+import rmi.ubs.UnidadeSaudeImpl;
 
 public class ServidorRMI {
     public static void main(String[] args) {
         try {
-            String host = "localhost";
+            String host = "10.100.32.40";
             int port = 2000;
 
             String urlUnidadeSaude = "rmi://" + host + ":" + port + "/unidadesSaude";
-            String urlCidade = "rmi://" + host + ":" + port + "/cidades";
+            // String urlCidade = "rmi://" + host + ":" + port + "/cidades";
             String urlOcupacao = "rmi://" + host + ":" + port + "/ocupacoes";
 
             System.setProperty("java.rmi.server.hostname", host);
 
             Registry registry = LocateRegistry.createRegistry(port);
 
-            registry.rebind(urlCidade, new CidadeImpl());
+            // registry.rebind(urlCidade, new CidadeImpl());
             registry.rebind(urlOcupacao, new CboImpl());
             registry.rebind(urlUnidadeSaude, new UnidadeSaudeImpl());
 
@@ -33,8 +32,8 @@ public class ServidorRMI {
 }
 
 // PARA CONSULTAR MAIS TARDE
-//            String urlCidade = "rmi://" + host + ":" + port + "/cidades";
-//            String urlOcupacao = "rmi://" + host + ":" + port + "/ocupacoes";
+// String urlCidade = "rmi://" + host + ":" + port + "/cidades";
+// String urlOcupacao = "rmi://" + host + ":" + port + "/ocupacoes";
 
-//            registry.rebind(urlCidade, new CidadeImpl());
-//            registry.rebind(urlOcupacao, new CboImpl());
+// registry.rebind(urlCidade, new CidadeImpl());
+// registry.rebind(urlOcupacao, new CboImpl());

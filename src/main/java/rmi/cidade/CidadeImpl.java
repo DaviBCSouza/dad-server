@@ -15,9 +15,9 @@ public class CidadeImpl extends UnicastRemoteObject implements ICidadeService {
     }
 
     private void carregarCidades() {
-        cidades.add(new Cidade("13001", "Manaus"));
-        cidades.add(new Cidade("14001", "Manacapuru"));
-        cidades.add(new Cidade("15001", "Itacoatiara"));
+        cidades.add(new Cidade("13001", "Manaus", 500000));
+        cidades.add(new Cidade("14001", "Manacapuru", 120000));
+        cidades.add(new Cidade("15001", "Itacoatiara", 100000));
     }
 
     @Override
